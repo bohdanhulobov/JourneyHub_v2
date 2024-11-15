@@ -1,0 +1,45 @@
+@use "tools";
+
+.home {
+  & .tab {
+    display: flex;
+    list-style-type: none;
+    margin-top: 0.5rem;
+    padding-left: 0;
+
+    &__link {
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      color: tools.$color-highlight;
+      text-decoration: none;
+      transition: color 0.3s, background-color 0.3s;
+      border: 1px solid tools.$color-highlight;
+      border-radius: 10px;
+    }
+
+    &__link:hover {
+      border: 1px solid tools.$color-font;
+      color: tools.$color-font;
+    }
+  }
+
+  & aside {
+    padding-top: 1rem;
+
+    & .btn-primary {
+      margin: 0.2rem 0;
+    }
+  }
+
+  & .card {
+    border: 1px solid tools.$color-font;
+  }
+
+  div[id^="region"]:target {
+    display: block;
+  }
+
+  div[id^="region"]:not(:target) {
+    display: none;
+  }
+}

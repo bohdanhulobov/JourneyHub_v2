@@ -1,0 +1,39 @@
+$color-main: #efd9ceff;
+$color-secondary: #b1cee8;
+$color-tertiary: #8ab5dc;
+$color-additional: #5091cb;
+$color-highlight: #327bab;
+$color-base: #ffffff;
+
+$color-font: #000000;
+
+$gradient-main: linear-gradient(
+  180deg,
+  $color-base,
+  $color-main,
+  $color-secondary,
+  $color-tertiary,
+  $color-additional,
+  $color-highlight
+);
+$gradient-top: linear-gradient(
+  0deg,
+  $color-main,
+  $color-secondary,
+  $color-tertiary,
+  $color-additional,
+  $color-highlight
+);
+
+$font-family: "Rubik-VariableFont_wght", sans-serif;
+
+@font-face {
+  font-family: "Rubik-VariableFont_wght";
+  src: url("../fonts/Rubik-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Rubik-VariableFont_wght", sans-serif;
+}

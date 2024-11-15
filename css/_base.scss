@@ -1,0 +1,14 @@
+@use "tools";
+
+main {
+  background: tools.$gradient-main;
+}
+
+.btn-primary {
+  background-color: tools.$color-highlight;
+}
+
+.accordion-button {
+  border-radius: 5px;
+  border: 1px solid tools.$color-font;
+}

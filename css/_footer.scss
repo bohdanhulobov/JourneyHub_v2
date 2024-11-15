@@ -1,0 +1,9 @@
+@use "tools";
+
+footer {
+  background: tools.$color-highlight;
+
+  & i {
+    margin-right: 0.5rem;
+  }
+}

@@ -1,0 +1,23 @@
+.promo-banner {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none;
+  border-radius: 8px;
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.promo-banner .btn {
+  font-size: 0.7rem;
+}
+
+.promo-banner.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}

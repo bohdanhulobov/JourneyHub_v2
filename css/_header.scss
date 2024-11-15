@@ -1,0 +1,39 @@
+@use "tools";
+
+header {
+  background: tools.$gradient-top;
+  padding-top: 5vh;
+  border-bottom: 2px solid tools.$color-font;
+
+  & .title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    & a {
+      margin: 0;
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: tools.$color-font;
+    }
+  }
+
+  & .logo {
+    width: 100px;
+  }
+
+  & .title a,
+  & .logo {
+    margin: 0 1rem;
+  }
+
+  & .dropdown-menu {
+    --bs-dropdown-min-width: 0;
+  }
+
+  & .nav-item {
+    i {
+      margin-right: 1rem;
+    }
+  }
+}
