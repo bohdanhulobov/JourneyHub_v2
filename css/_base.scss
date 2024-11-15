@@ -8,7 +8,8 @@ main {
   background-color: tools.$color-highlight;
 }
 
-.accordion-button {
-  border-radius: 5px;
+.accordion-button,
+.accordion-item {
+  border-radius: 5px !important;
   border: 1px solid tools.$color-font;
 }
