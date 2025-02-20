@@ -7,6 +7,7 @@ const rename = require("gulp-rename");
 const uglify = require("gulp-uglify");
 const concat = require("gulp-concat");
 const browserSync = require("browser-sync").create();
+const replace = require("gulp-replace");
 
 const SCSS_DIR = "./css/**/*.scss";
 const JS_DIR = "./js/**/*.js";
@@ -39,6 +40,17 @@ function minifyJs() {
     .on("end", () => console.log("JavaScript Minified"));
 }
 
+function copyHtml() {
+  console.log("Copying HTML files...");
+  return gulp
+    .src("./index.html")
+    .pipe(replace('href="dist/css/', 'href="css/'))
+    .pipe(replace('src="dist/images/', 'src="images/'))
+    .pipe(replace('src="dist/js/', 'src="js/'))
+    .pipe(gulp.dest(DIST_DIR))
+    .on("end", () => console.log("HTML files copied"));
+}
+
 function copyImages() {
   console.log("Copying images...");
   return gulp
@@ -59,15 +71,21 @@ function watchFiles() {
   console.log("Watching files...");
   browserSync.init({
     server: {
-      baseDir: "./",
+      baseDir: "./dist",
     },
   });
   gulp.watch(SCSS_DIR, compileSass);
   gulp.watch(JS_DIR, minifyJs);
-  gulp.watch("./*.html").on("change", browserSync.reload);
+  gulp.watch("./*.html", copyHtml).on("change", browserSync.reload);
 }
 
-const build = gulp.series(compileSass, minifyJs, copyImages, copyFonts);
+const build = gulp.series(
+  compileSass,
+  minifyJs,
+  copyHtml,
+  copyImages,
+  copyFonts,
+);
 
-exports.default = gulp.series(compileSass, minifyJs, watchFiles);
+exports.default = gulp.series(build, watchFiles);
 exports.build = build;
