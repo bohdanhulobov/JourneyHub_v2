@@ -8,7 +8,6 @@ const uglify = require("gulp-uglify");
 const concat = require("gulp-concat");
 const browserSync = require("browser-sync").create();
 
-const BUILD_DIR = "./css";
 const SCSS_DIR = "./css/**/*.scss";
 const JS_DIR = "./js/**/*.js";
 const DIST_DIR = "./dist";
@@ -40,12 +39,12 @@ function minifyJs() {
     .on("end", () => console.log("JavaScript Minified"));
 }
 
-function copyCss() {
-  console.log("Copying CSS files...");
+function copyHtml() {
+  console.log("Copying HTML files...");
   return gulp
-    .src(`${BUILD_DIR}/**/*.min.css`)
-    .pipe(gulp.dest(`${DIST_DIR}/css`))
-    .on("end", () => console.log("CSS files copied"));
+    .src("./index.html")
+    .pipe(gulp.dest(DIST_DIR))
+    .on("end", () => console.log("HTML files copied"));
 }
 
 function copyImages() {
@@ -79,7 +78,7 @@ function watchFiles() {
 const build = gulp.series(
   compileSass,
   minifyJs,
-  copyCss,
+  copyHtml,
   copyImages,
   copyFonts,
 );
