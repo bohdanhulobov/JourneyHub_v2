@@ -39,14 +39,6 @@ function minifyJs() {
     .on("end", () => console.log("JavaScript Minified"));
 }
 
-function copyHtml() {
-  console.log("Copying HTML files...");
-  return gulp
-    .src("./index.html")
-    .pipe(gulp.dest(DIST_DIR))
-    .on("end", () => console.log("HTML files copied"));
-}
-
 function copyImages() {
   console.log("Copying images...");
   return gulp
@@ -75,13 +67,7 @@ function watchFiles() {
   gulp.watch("./*.html").on("change", browserSync.reload);
 }
 
-const build = gulp.series(
-  compileSass,
-  minifyJs,
-  copyHtml,
-  copyImages,
-  copyFonts,
-);
+const build = gulp.series(compileSass, minifyJs, copyImages, copyFonts);
 
 exports.default = gulp.series(compileSass, minifyJs, watchFiles);
 exports.build = build;
