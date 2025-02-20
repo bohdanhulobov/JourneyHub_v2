@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JourneyHub</title>
+    <link rel="stylesheet" href="dist/css/reset.css" />
+    <link rel="stylesheet" href="dist/css/style.min.css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="dist/images/favicon/favicon-48x48.png"
+      sizes="48x48"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="dist/images/favicon/favicon.svg"
+    />
+    <link rel="shortcut icon" href="dist/images/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="dist/images/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="dist/images/favicon/site.webmanifest" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="d-flex flex-column min-vh-100">
+    <header>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 title text-center">
+            <a href="index.html">
+              <h1>JourneyHub</h1>
+            </a>
+            <img class="logo rounded" src="images/header/logo.png" alt="Logo" />
+          </div>
+          <ul class="nav nav-tabs justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                ><i class="fa-solid fa-plane"></i>Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"
+                ><i class="fa-solid fa-magnifying-glass"></i>Search</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-user"></i>Profile</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fa-solid fa-right-to-bracket"></i>Sign up</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fa-solid fa-calendar-check"></i>My trips</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fa-solid fa-gear"></i>Settings</a
+                  >
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fa-solid fa-right-from-bracket"></i>Log out</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main class="home py-2 flex-grow-1">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-md-3">
+            <aside class="sticky-top" aria-label="sidebar">
+              <div class="collapseButton">
+                <button
+                  class="btn btn-primary w-100"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  aria-expanded="false"
+                  data-bs-target="#collapseDestinations"
+                  aria-controls="collapseDestinations"
+                >
+                  Popular Destinations
+                </button>
+                <div class="collapse" id="collapseDestinations">
+                  <div class="card card-body">
+                    <ul>
+                      <li><a href="#region-usa">USA</a></li>
+                      <li><a href="#region-europe">Europe</a></li>
+                      <li><a href="#region-asia">Asia</a></li>
+                      <li><a href="#region-africa">Africa</a></li>
+                      <li><a href="#region-south-america">South America</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="collapseButton">
+                <button
+                  class="btn btn-primary w-100"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseWeather"
+                  aria-expanded="false"
+                  aria-controls="collapseWeather"
+                >
+                  Weather Info
+                </button>
+                <div class="collapse" id="collapseWeather">
+                  <div class="card card-body">
+                    <h5>Weather in Top Destinations</h5>
+                    <p><strong>USA:</strong> Sunny, 75°F</p>
+                    <p><strong>Europe:</strong> Cloudy, 60°F</p>
+                    <p><strong>Asia:</strong> Rainy, 80°F</p>
+                    <p><strong>Africa:</strong> Warm, 85°F</p>
+                    <p><strong>South America:</strong> Breezy, 70°F</p>
+                  </div>
+                </div>
+              </div>
+
+              <h5 class="mt-3">Useful Links</h5>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <a href="#visa-info">Visa Information</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#travel-insurance">Travel Insurance</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#flight-bookings">Flight Bookings</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#hotel-bookings">Hotel Bookings</a>
+                </li>
+                <li class="list-group-item">
+                  <a href="#local-guides">Local Guides</a>
+                </li>
+              </ul>
+            </aside>
+          </div>
+          <div class="col-12 col-md-6">
+            <ul class="tab">
+              <li class="tab__item">
+                <a class="tab__link" href="#region-usa">USA</a>
+              </li>
+              <li class="tab__item">
+                <a class="tab__link" href="#region-europe">Europe</a>
+              </li>
+              <li class="tab__item">
+                <a class="tab__link" href="#region-asia">Asia</a>
+              </li>
+            </ul>
+            <div>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Welcome to JourneyHub – Your Gateway to Unforgettable
+                    Adventures
+                  </h5>
+                  <p class="card-text">
+                    Discover the world with JourneyHub, your ultimate travel
+                    companion. Whether you’re a solo explorer, a family looking
+                    for a getaway, or friends planning an epic adventure, we’ve
+                    got you covered with curated travel guides, personalized
+                    recommendations, and insider tips.
+                  </p>
+                  <p class="card-text">
+                    At JourneyHub, we believe that travel is more than just a
+                    destination—it’s an experience. With us, you’ll find unique
+                    itineraries, local insights, and off-the-beaten-path
+                    recommendations that let you explore like a true adventurer.
+                    Dive into the vibrant cultures, stunning landscapes, and
+                    hidden gems that make each destination unforgettable.
+                  </p>
+
+                  <h6>Why JourneyHub?</h6>
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                      Curated Travel Guides: From popular landmarks to hidden
+                      treasures, our guides ensure you never miss a moment.
+                    </li>
+                    <li class="list-group-item">
+                      Expert Advice & Tips: Get insider recommendations from
+                      seasoned travelers.
+                    </li>
+                    <li class="list-group-item">
+                      Tailored Experiences: Whether you’re seeking relaxation,
+                      adventure, or cultural immersion, we help design the
+                      journey that’s perfect for you.
+                    </li>
+                    <li class="list-group-item">
+                      Flexible Planning Tools: Make adjustments as you go with
+                      our dynamic planning features.
+                    </li>
+                  </ul>
+                  <p class="card-text mt-3">
+                    Let’s embark on a journey that’s as unique as you are. With
+                    JourneyHub, every trip becomes a story worth telling. Start
+                    exploring today and make your next adventure unforgettable!
+                    🌍 ✈️
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div id="region-usa">
+              <div class="card mb-3">
+                <a
+                  href="images/trips/usa/new-york.jpg"
+                  data-lightbox="new-york"
+                  data-title="New York"
+                >
+                  <img
+                    src="images/trips/usa/new-york.jpg"
+                    class="card-img-top"
+                    alt="New York City Skyline"
+                  />
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Explore New York City</h5>
+                  <p class="card-text">
+                    Discover the wonders of New York City, "The Big Apple,"
+                    known for its stunning skyline, diverse neighborhoods, and
+                    famous attractions such as Times Square, Central Park, and
+                    the Statue of Liberty.
+                  </p>
+                  <ul class="list-unstyled mb-3">
+                    <li><strong>Duration:</strong> 5 Days / 4 Nights</li>
+                    <li><strong>Price:</strong> $899 per person</li>
+                    <li>
+                      <strong>Rating:</strong>
+                      <span class="text-warning"> ★★★★☆ (4.5) </span>
+                      (325 reviews)
+                    </li>
+                  </ul>
+                  <a href="#" class="btn btn-primary">Book Now</a>
+                  <a href="#" class="btn btn-outline-secondary">More Info</a>
+                  <p class="card-text mt-3">
+                    <small class="text-body-secondary"
+                      >Last updated 5 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="card mb-3">
+                <a
+                  href="images/trips/usa/los-angeles.jpg"
+                  data-lightbox="los-angeles"
+                  data-title="Los Angeles"
+                >
+                  <img
+                    src="images/trips/usa/los-angeles.jpg"
+                    class="card-img-top"
+                    alt="Los Angeles City View"
+                  />
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Discover Los Angeles</h5>
+                  <p class="card-text">
+                    Experience the magic of Los Angeles, the entertainment
+                    capital of the world. Visit iconic places like Hollywood,
+                    Santa Monica Pier, and the Getty Center, and enjoy the
+                    perfect mix of city life and beach relaxation.
+                  </p>
+                  <ul class="list-unstyled mb-3">
+                    <li><strong>Duration:</strong> 4 Days / 3 Nights</li>
+                    <li><strong>Price:</strong> $799 per person</li>
+                    <li>
+                      <strong>Rating:</strong>
+                      <span class="text-warning"> ★★★★☆ (4.3) </span>
+                      (280 reviews)
+                    </li>
+                  </ul>
+                  <a href="#" class="btn btn-primary">Book Now</a>
+                  <a href="#" class="btn btn-outline-secondary">More Info</a>
+                  <p class="card-text mt-3">
+                    <small class="text-body-secondary"
+                      >Last updated 10 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="card mb-3">
+                <a
+                  href="images/trips/usa/miami.avif"
+                  data-lightbox="miami"
+                  data-title="Miami Beach"
+                >
+                  <img
+                    src="images/trips/usa/miami.avif"
+                    class="card-img-top"
+                    alt="Miami Beach"
+                  />
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Sunny Miami Getaway</h5>
+                  <p class="card-text">
+                    Soak up the sun in Miami, known for its vibrant nightlife,
+                    stunning beaches, and Art Deco architecture. Enjoy the Cuban
+                    culture in Little Havana or explore the natural beauty of
+                    the nearby Everglades.
+                  </p>
+                  <ul class="list-unstyled mb-3">
+                    <li><strong>Duration:</strong> 3 Days / 2 Nights</li>
+                    <li><strong>Price:</strong> $599 per person</li>
+                    <li>
+                      <strong>Rating:</strong>
+                      <span class="text-warning"> ★★★★☆ (4.6) </span>
+                      (340 reviews)
+                    </li>
+                  </ul>
+                  <a href="#" class="btn btn-primary">Book Now</a>
+                  <a href="#" class="btn btn-outline-secondary">More Info</a>
+                  <p class="card-text mt-3">
+                    <small class="text-body-secondary"
+                      >Last updated 15 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="card mb-3">
+                <a
+                  href="images/trips/usa/las-vegas.jpg"
+                  data-lightbox="las-vegas"
+                  data-title="Las Vegas Strip"
+                >
+                  <img
+                    src="images/trips/usa/las-vegas.jpg"
+                    class="card-img-top"
+                    alt="Las Vegas Strip"
+                  />
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Exciting Las Vegas Adventure</h5>
+                  <p class="card-text">
+                    Dive into the electrifying atmosphere of Las Vegas. Enjoy
+                    world-class shows, gourmet dining, and famous casinos on the
+                    Las Vegas Strip, or take a short trip to the nearby Grand
+                    Canyon.
+                  </p>
+                  <ul class="list-unstyled mb-3">
+                    <li><strong>Duration:</strong> 3 Days / 2 Nights</li>
+                    <li><strong>Price:</strong> $699 per person</li>
+                    <li>
+                      <strong>Rating:</strong>
+                      <span class="text-warning"> ★★★★☆ (4.4) </span>
+                      (390 reviews)
+                    </li>
+                  </ul>
+                  <a href="#" class="btn btn-primary">Book Now</a>
+                  <a href="#" class="btn btn-outline-secondary">More Info</a>
+                  <p class="card-text mt-3">
+                    <small class="text-body-secondary"
+                      >Last updated 20 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div id="region-europe">
+              <div class="card mb-3">
+                <a
+                  href="images/trips/europe/paris.webp"
+                  data-lightbox="paris"
+                  data-title="Paris"
+                >
+                  <img
+                    src="images/trips/europe/paris.webp"
+                    class="card-img-top"
+                    alt="Eiffel Tower in Paris"
+                  />
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Explore Paris</h5>
+                  <p class="card-text">
+                    Discover the charm of Paris, the City of Lights. Enjoy
+                    iconic landmarks such as the Eiffel Tower, Louvre Museum,
+                    and Notre-Dame Cathedral, while indulging in exquisite
+                    cuisine at local bistros.
+                  </p>
+                  <ul class="list-unstyled mb-3">
+                    <li><strong>Duration:</strong> 4 Days / 3 Nights</li>
+                    <li><strong>Price:</strong> $899 per person</li>
+                    <li>
+                      <strong>Rating:</strong>
+                      <span class="text-warning"> ★★★★☆ (4.7) </span>
+                      (450 reviews)
+                    </li>
+                  </ul>
+                  <a href="#" class="btn btn-primary">Book Now</a>
+                  <a href="#" class="btn btn-outline-secondary">More Info</a>
+                  <p class="card-text mt-3">
+                    <small class="text-body-secondary"
+                      >Last updated 10 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="card mb-3">
+                <a
+                  href="images/trips/europe/rome.jpg"
+                  data-lightbox="rome"
+                  data-title="Rome"
+                >
+                  <img
+                    src="images/trips/europe/rome.jpg"
+                    class="card-img-top"
+                    alt="Colosseum in Rome"
+                  />
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Discover Rome</h5>
+                  <p class="card-text">
+                    Step back in time in Rome, the Eternal City. Visit ancient
+                    wonders like the Colosseum, Vatican City, and the Pantheon,
+                    while enjoying delicious gelato and authentic Italian
+                    cuisine.
+                  </p>
+                  <ul class="list-unstyled mb-3">
+                    <li><strong>Duration:</strong> 5 Days / 4 Nights</li>
+                    <li><strong>Price:</strong> $949 per person</li>
+                    <li>
+                      <strong>Rating:</strong>
+                      <span class="text-warning"> ★★★★★ (4.8) </span>
+                      (500 reviews)
+                    </li>
+                  </ul>
+                  <a href="#" class="btn btn-primary">Book Now</a>
+                  <a href="#" class="btn btn-outline-secondary">More Info</a>
+                  <p class="card-text mt-3">
+                    <small class="text-body-secondary"
+                      >Last updated 15 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="card mb-3">
+                <a
+                  href="images/trips/europe/london.avif"
+                  data-lightbox="london"
+                  data-title="London"
+                >
+                  <img
+                    src="images/trips/europe/london.avif"
+                    class="card-img-top"
+                    alt="London Bridge"
+                  />
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Experience London</h5>
+                  <p class="card-text">
+                    Explore London, a vibrant city filled with history and
+                    culture. Visit landmarks such as Buckingham Palace, the
+                    British Museum, and Tower Bridge, while enjoying a
+                    traditional afternoon tea.
+                  </p>
+                  <ul class="list-unstyled mb-3">
+                    <li><strong>Duration:</strong> 4 Days / 3 Nights</li>
+                    <li><strong>Price:</strong> $879 per person</li>
+                    <li>
+                      <strong>Rating:</strong>
+                      <span class="text-warning"> ★★★★☆ (4.6) </span>
+                      (300 reviews)
+                    </li>
+                  </ul>
+                  <a href="#" class="btn btn-primary">Book Now</a>
+                  <a href="#" class="btn btn-outline-secondary">More Info</a>
+                  <p class="card-text mt-3">
+                    <small class="text-body-secondary"
+                      >Last updated 20 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="card mb-3">
+                <a
+                  href="images/trips/europe/barcelona.jpeg"
+                  data-lightbox="barcelona"
+                  data-title="Barcelona"
+                >
+                  <img
+                    src="images/trips/europe/barcelona.jpeg"
+                    class="card-img-top"
+                    alt="Sagrada Familia in Barcelona"
+                  />
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Visit Barcelona</h5>
+                  <p class="card-text">
+                    Enjoy the unique blend of art and architecture in Barcelona.
+                    Marvel at the works of Antoni Gaudí, including the famous
+                    Sagrada Familia and Park Güell, while savoring tapas in the
+                    vibrant Gothic Quarter.
+                  </p>
+                  <ul class="list-unstyled mb-3">
+                    <li><strong>Duration:</strong> 5 Days / 4 Nights</li>
+                    <li><strong>Price:</strong> $899 per person</li>
+                    <li>
+                      <strong>Rating:</strong>
+                      <span class="text-warning"> ★★★★☆ (4.5) </span>
+                      (375 reviews)
+                    </li>
+                  </ul>
+                  <a href="#" class="btn btn-primary">Book Now</a>
+                  <a href="#" class="btn btn-outline-secondary">More Info</a>
+                  <p class="card-text mt-3">
+                    <small class="text-body-secondary"
+                      >Last updated 25 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div id="region-asia">
+              <div class="card mb-3">
+                <a
+                  href="images/trips/asia/tokyo.jpg"
+                  data-lightbox="tokyo"
+                  data-title="Tokyo"
+                >
+                  <img
+                    src="images/trips/asia/tokyo.jpg"
+                    class="card-img-top"
+                    alt="Tokyo Tower"
+                  />
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Discover Tokyo</h5>
+                  <p class="card-text">
+                    Experience the vibrant culture of Tokyo, where tradition
+                    meets modernity. Visit the historic Senso-ji Temple, shop in
+                    Shibuya, and enjoy delicious sushi at Tsukiji Market.
+                  </p>
+                  <ul class="list-unstyled mb-3">
+                    <li><strong>Duration:</strong> 6 Days / 5 Nights</li>
+                    <li><strong>Price:</strong> $1,199 per person</li>
+                    <li>
+                      <strong>Rating:</strong>
+                      <span class="text-warning"> ★★★★★ (4.9) </span>
+                      (520 reviews)
+                    </li>
+                  </ul>
+                  <a href="#" class="btn btn-primary">Book Now</a>
+                  <a href="#" class="btn btn-outline-secondary">More Info</a>
+                  <p class="card-text mt-3">
+                    <small class="text-body-secondary"
+                      >Last updated 5 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="card mb-3">
+                <a
+                  href="images/trips/asia/bangkok.webp"
+                  data-lightbox="bangkok"
+                  data-title="Bangkok"
+                >
+                  <img
+                    src="images/trips/asia/bangkok.webp"
+                    class="card-img-top"
+                    alt="Grand Palace in Bangkok"
+                  />
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Explore Bangkok</h5>
+                  <p class="card-text">
+                    Uncover the charm of Bangkok, known for its ornate shrines
+                    and vibrant street life. Don't miss the Grand Palace, Wat
+                    Pho, and the bustling markets filled with delicious street
+                    food.
+                  </p>
+                  <ul class="list-unstyled mb-3">
+                    <li><strong>Duration:</strong> 4 Days / 3 Nights</li>
+                    <li><strong>Price:</strong> $599 per person</li>
+                    <li>
+                      <strong>Rating:</strong>
+                      <span class="text-warning"> ★★★★☆ (4.3) </span>
+                      (300 reviews)
+                    </li>
+                  </ul>
+                  <a href="#" class="btn btn-primary">Book Now</a>
+                  <a href="#" class="btn btn-outline-secondary">More Info</a>
+                  <p class="card-text mt-3">
+                    <small class="text-body-secondary"
+                      >Last updated 10 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="card mb-3">
+                <a
+                  href="images/trips/asia/seoul.jpg"
+                  data-lightbox="seoul"
+                  data-title="Seoul"
+                >
+                  <img
+                    src="images/trips/asia/seoul.jpg"
+                    class="card-img-top"
+                    alt="Gyeongbokgung Palace in Seoul"
+                  />
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Visit Seoul</h5>
+                  <p class="card-text">
+                    Dive into the dynamic culture of Seoul. Explore historic
+                    sites like Gyeongbokgung Palace, indulge in K-pop culture,
+                    and taste authentic Korean BBQ in vibrant neighborhoods like
+                    Myeongdong.
+                  </p>
+                  <ul class="list-unstyled mb-3">
+                    <li><strong>Duration:</strong> 5 Days / 4 Nights</li>
+                    <li><strong>Price:</strong> $799 per person</li>
+                    <li>
+                      <strong>Rating:</strong>
+                      <span class="text-warning"> ★★★★☆ (4.5) </span>
+                      (400 reviews)
+                    </li>
+                  </ul>
+                  <a href="#" class="btn btn-primary">Book Now</a>
+                  <a href="#" class="btn btn-outline-secondary">More Info</a>
+                  <p class="card-text mt-3">
+                    <small class="text-body-secondary"
+                      >Last updated 15 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="card mb-3">
+                <a
+                  href="images/trips/asia/singapore.jpg"
+                  data-lightbox="singapore"
+                  data-title="Singapore"
+                >
+                  <img
+                    src="images/trips/asia/singapore.jpg"
+                    class="card-img-top"
+                    alt="Marina Bay Sands in Singapore"
+                  />
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">Experience Singapore</h5>
+                  <p class="card-text">
+                    Explore Singapore, a modern metropolis known for its
+                    cleanliness and greenery. Visit Gardens by the Bay, enjoy
+                    shopping on Orchard Road, and savor the diverse food scene
+                    in hawker centers.
+                  </p>
+                  <ul class="list-unstyled mb-3">
+                    <li><strong>Duration:</strong> 4 Days / 3 Nights</li>
+                    <li><strong>Price:</strong> $749 per person</li>
+                    <li>
+                      <strong>Rating:</strong>
+                      <span class="text-warning"> ★★★★★ (4.8) </span>
+                      (450 reviews)
+                    </li>
+                  </ul>
+                  <a href="#" class="btn btn-primary">Book Now</a>
+                  <a href="#" class="btn btn-outline-secondary">More Info</a>
+                  <p class="card-text mt-3">
+                    <small class="text-body-secondary"
+                      >Last updated 20 mins ago</small
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion accordion-flush" id="accordionContactForm">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-ContactForm"
+                    aria-expanded="false"
+                    aria-controls="flush-ContactForm"
+                  >
+                    Contact Us
+                  </button>
+                </h2>
+              </div>
+              <div
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordionContactForm"
+                id="flush-ContactForm"
+              >
+                <form>
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      placeholder="Enter your name"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="subject"
+                      placeholder="Enter subject"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea
+                      class="form-control"
+                      id="message"
+                      rows="3"
+                      placeholder="Enter your message"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="phone"
+                      placeholder="Enter your phone number"
+                      required
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-outline-light mt-3">
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-3 d-flex align-items-start">
+            <aside class="ad sticky-top text-center" aria-label="advertisement">
+              <h6>Our Sponsors</h6>
+              <a
+                href="images/ads/ad.jpg"
+                data-lightbox="advertisement"
+                data-title="Advertisement 1"
+              >
+                <img
+                  src="images/ads/ad.jpg"
+                  class="img-thumbnail"
+                  alt="advertisement"
+                />
+              </a>
+              <a
+                href="images/ads/ad-2.jpg"
+                data-lightbox="advertisement"
+                data-title="Advertisement 2"
+              >
+                <img
+                  src="images/ads/ad-2.jpg"
+                  class="img-thumbnail mt-2"
+                  alt="advertisement"
+                />
+              </a>
+              <a
+                href="images/ads/ad-3.jpg"
+                data-lightbox="advertisement"
+                data-title="Advertisement 3"
+                class="d-none"
+              >
+                <img
+                  src="images/ads/ad-3.jpg"
+                  class="img-thumbnail mt-2"
+                  alt="advertisement"
+                />
+              </a>
+              <a
+                href="images/ads/ad-4.jpg"
+                data-lightbox="advertisement"
+                data-title="Advertisement 4"
+                class="d-none"
+              >
+                <img
+                  src="images/ads/ad-4.jpg"
+                  class="img-thumbnail mt-2"
+                  alt="advertisement"
+                />
+              </a>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="text-light pt-4 pb-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 d-flex flex-md-row">
+            <div class="me-md-5 mb-4 mb-md-0">
+              <ul class="list-group list-unstyled">
+                <li class="mb-2">
+                  <h5>Out Socials</h5>
+                </li>
+                <li>
+                  <a href="#" class="text-light text-decoration-none"
+                    ><i class="fab fa-instagram menu-icon"></i>Instagram</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-light text-decoration-none"
+                    ><i class="fab fa-linkedin menu-icon"></i>LinkedIn</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-light text-decoration-none"
+                    ><i class="fab fa-twitter menu-icon"></i>X / Twitter</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-light text-decoration-none"
+                    ><i class="fab fa-youtube menu-icon"></i>YouTube</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <ul class="list-group list-unstyled">
+                <li class="mb-2">
+                  <h5>Company</h5>
+                </li>
+                <li>
+                  <a href="#" class="text-light text-decoration-none"
+                    >Help Center</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-light text-decoration-none"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-light text-decoration-none"
+                    >Data Security</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-light text-decoration-none"
+                    >Terms and Conditions</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 text-md-end text-center mt-3 mt-md-0">
+            <p>
+              JourneyHub - Your adventure starts here! Explore the world's most
+              breathtaking destinations, from pristine beaches and bustling
+              cities to hidden gems and nature retreats.
+            </p>
+            <p>All Rights Reserved - 2024 © JourneyHub</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="promo-banner bg-light rounded border p-3">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <strong>Special Offer!</strong>
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Close"
+          onclick="hideBanner()"
+        ></button>
+      </div>
+      <p class="mb-2">
+        Get a 20% discount on your next purchase. Don’t miss out!
+      </p>
+      <a href="#" class="btn btn-primary btn-sm w-100">Shop Now</a>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+    <script src="dist/js/main.min.js"></script>
+  </body>
+</html>
