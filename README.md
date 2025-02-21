@@ -20,7 +20,7 @@ JourneyHub is a travel planning web application that allows users to explore pop
 
 ### Development
 
-1. Run Gulp to compile SCSS, minify JS, and start the local server:
+1. Run Gulp to compile SCSS, transpile and minify JS, copy images, and start the local server:
 
    ```sh
    npm run gulp
@@ -49,6 +49,7 @@ The project is automatically deployed to GitHub Pages when pushing to the `main`
 - `fonts/` - Fonts.
 - `images/` - Images.
 - `js/` - JavaScript files.
+- `scripts/` - Node.js scripts.
 - `gulpfile.js` - Gulp configuration.
 - `package.json` - Project dependencies and scripts.
 - `index.html` - Main HTML page.

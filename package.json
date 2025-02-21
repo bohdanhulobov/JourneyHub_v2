@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "gulp default",
-    "build": "gulp build"
+    "build": "gulp build",
+    "copy-images": "node scripts/copyImages.js"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "browser-sync": "^2.27.7",
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-cli": "3.0.0",
     "gulp-concat": "^2.6.1",
@@ -21,7 +23,9 @@
     "gulp-replace": "^1.1.4",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0"
   },
   "dependencies": {
     "sass": "^1.85.0"

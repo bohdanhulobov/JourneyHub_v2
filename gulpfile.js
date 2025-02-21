@@ -6,8 +6,10 @@ const cleanCSS = require("gulp-clean-css");
 const rename = require("gulp-rename");
 const uglify = require("gulp-uglify");
 const concat = require("gulp-concat");
+const babel = require("gulp-babel");
 const browserSync = require("browser-sync").create();
 const replace = require("gulp-replace");
+const { exec } = require("child_process");
 
 const SCSS_DIR = "./css/**/*.scss";
 const JS_DIR = "./js/**/*.js";
@@ -33,6 +35,11 @@ function minifyJs() {
   return gulp
     .src(JS_DIR)
     .pipe(sourcemaps.init())
+    .pipe(
+      babel({
+        presets: ["@babel/preset-env"],
+      }),
+    )
     .pipe(concat("main.min.js"))
     .pipe(uglify())
     .pipe(sourcemaps.write("."))
@@ -51,12 +58,17 @@ function copyHtml() {
     .on("end", () => console.log("HTML files copied"));
 }
 
-function copyImages() {
+function copyImages(done) {
   console.log("Copying images...");
-  return gulp
-    .src("./images/**/*")
-    .pipe(gulp.dest(`${DIST_DIR}/images`))
-    .on("end", () => console.log("Images copied"));
+  exec("node scripts/copyImages.js", (err, stdout, stderr) => {
+    if (err) {
+      console.error(`Error copying images: ${stderr}`);
+      done(err);
+    } else {
+      console.log(stdout);
+      done();
+    }
+  });
 }
 
 function copyFonts() {
